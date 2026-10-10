@@ -1,0 +1,35 @@
+---
+doc_id: DOC0001
+title: Quy chế chi tiêu công tác Acme Corp
+category: travel_policy
+version: 2.0
+effective_date: 2024-01-01
+owner: HR & Finance Department
+status: active
+---
+
+# Acme Corp — Quy chế Chi tiêu Công tác và Bồi hoàn Chi phí (Travel & Expense Policy)
+
+## Điều 1: Phạm vi và Đối tượng áp dụng
+Quy chế này áp dụng cho toàn thể cán bộ nhân viên chính thức của Acme Corp khi thực hiện các chuyến công tác trong nước và quốc tế theo lệnh điều động của cấp có thẩm quyền. Mọi khoản chi tiêu phát sinh trong quá trình công tác phải nhằm mục đích phục vụ công việc chung của công ty.
+
+## Điều 2: Tiêu chuẩn Khách sạn và Lưu trú
+Nhân viên đi công tác được thanh toán chi phí phòng khách sạn theo tiêu chuẩn sau:
+- Cán bộ nhân viên thông thường: Tiêu chuẩn phòng đơn tiêu chuẩn 3 sao, mức trần tối đa $120/đêm đối với các thành phố lớn và $90/đêm đối với các địa phương khác.
+- Quản lý cấp phòng ban trở lên: Tiêu chuẩn phòng khách sạn 4 sao, mức trần tối đa $180/đêm.
+Chi phí giặt là và các dịch vụ minibar cá nhân trong khách sạn không thuộc danh mục được thanh toán.
+
+## Điều 3: Tiêu chuẩn Bữa ăn và Phụ cấp Ăn uống
+Nhân viên đi công tác được thanh toán chi phí bữa ăn thực tế phát sinh (gồm ăn sáng, ăn trưa, ăn tối) với mức trần tối đa là $50 mỗi ngày (hoặc tương đương $50/day).
+- Khoản chi ăn uống phải có hóa đơn hợp lệ từ nhà hàng, quán ăn hoặc hóa đơn kèm theo của khách sạn.
+- Trường hợp tổng chi phí bữa ăn trong ngày vượt quá $50, nhân viên tự chi trả phần chênh lệch vượt định mức, công ty chỉ thanh toán tối đa $50/ngày.
+- Trường hợp chuyến công tác đã được đối tác hoặc ban tổ chức đài thọ bữa ăn, nhân viên không được yêu cầu bồi hoàn khoản tiền ăn cho bữa ăn đó.
+
+## Điều 4: Phương tiện Đi lại và Di chuyển
+- Vé máy bay: Áp dụng hạng vé phổ thông (Economy Class) cho toàn bộ các chặng bay có thời gian dưới 6 giờ. Toàn bộ vé máy bay phải được đặt thông qua cổng dịch vụ du lịch doanh nghiệp đã được phê duyệt (Approved Corporate Travel Portal).
+- Phương tiện đường bộ: Được thanh toán chi phí taxi, xe công nghệ (Grab, Uber) phục vụ di chuyển từ sân bay về khách sạn và từ nơi lưu trú đến địa điểm làm việc của đối tác.
+
+## Điều 5: Thời hạn Nộp Báo cáo Chi tiêu và Chứng từ
+- Tất cả hóa đơn, chứng từ và Báo cáo quyết toán chi tiêu công tác (Expense Claim) phải được nộp cho phòng Tài chính - Kế toán trong vòng 30 ngày kể từ ngày kết thúc chuyến công tác (hoặc ngày phát sinh chi phí).
+- Các hóa đơn nộp quá thời hạn 30 ngày mà không có văn bản giải trình lý do bất khả kháng được Giám đốc Tài chính phê duyệt sẽ tự động bị từ chối thanh toán.
+- Các khoản chi không có hóa đơn chứng từ hợp lệ sẽ tự động bị từ chối.

@@ -1,0 +1,24 @@
+---
+doc_id: DOC0002
+title: Ma trận phân cấp phê duyệt tài chính và chi phí công tác
+category: approval_matrix
+version: 2.1
+effective_date: 2024-03-15
+owner: Finance Department & Internal Audit
+status: active
+---
+
+# Acme Corp — Ma trận Phân cấp Phê duyệt Tài chính (Financial Delegation of Authority)
+
+## Điều 1: Nguyên tắc Phân cấp Phê duyệt
+Mọi khoản chi tiêu công tác phải được xem xét và phê duyệt theo đúng hạn mức thẩm quyền trước khi phòng Kế toán thực hiện giải ngân. Người phê duyệt phải chịu trách nhiệm liên đới về tính hợp lý, hợp lệ và mục đích kinh doanh của khoản chi.
+
+## Điều 2: Hạn mức Thẩm quyền Phê duyệt Chi phí Công tác
+- Mức 1 (Tổng chi phí <= $500): Do Trưởng nhóm trực tiếp (Team Lead / Line Manager) phê duyệt. Thời gian xem xét tối đa trong vòng 5 ngày làm việc.
+- Mức 2 (Tổng chi phí > $500 và <= $2,000): Bắt buộc phải có sự phê duyệt của Trưởng bộ phận (Department Head / Director). Nếu hồ sơ gửi lên chỉ có chữ ký của Team Lead thì hệ thống kiểm toán phải tự động chuyển tiếp (ESCALATE) lên Trưởng bộ phận.
+- Mức 3 (Tổng chi phí > $2,000): Bắt buộc chuyển lên Ban Giám đốc (C-level / CFO) xem xét và phê duyệt ngoại lệ.
+
+## Điều 3: Xử lý Hồ sơ Vượt Hạn mức hoặc Thiếu Chữ ký Thẩm quyền
+- Khi một báo cáo chi tiêu có tổng số tiền vượt quá $500, kiểm toán viên hoặc hệ thống kiểm toán tự động KHÔNG được tự ý phê duyệt (APPROVE) ngay lập tức.
+- Hệ thống phải gắn nhãn hành động là LEO THANG (ESCALATED) và ghi rõ lý do: "Tổng chi phí vượt mức $500, cần sự phê duyệt của Trưởng bộ phận".
+- Nếu chi phí thuộc danh mục cấm hoặc vượt trần định mức mà không có lý do giải trình hợp lệ, hồ sơ sẽ bị TỪ CHỐI (REJECTED).

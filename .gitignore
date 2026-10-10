@@ -1,4 +1,4 @@
-# 1. API Keys & Môi trường ảo (Bắt buộc bảo mật)
+# 1. API Keys & Môi trường ảo
 .env
 .venv/
 venv/
@@ -17,7 +17,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# 4. Tài liệu học tập & Nội bộ (Chỉ lưu ở máy local)
+# 4. Tài liệu học tập & Nội bộ
 .agents/
 learning material/
 tailieunoibo/

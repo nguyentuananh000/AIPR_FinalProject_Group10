@@ -1,0 +1,24 @@
+---
+doc_id: DOC0003
+title: Hướng dẫn định mức phụ cấp công tác đặc biệt và di chuyển
+category: allowance_guide
+version: 1.0
+effective_date: 2024-02-01
+owner: Operations & HR Department
+status: active
+---
+
+# Acme Corp — Hướng dẫn Định mức Phụ cấp Công tác Đặc biệt và Di chuyển
+
+## Điều 1: Chi phí Di chuyển Đường bộ và Đưa đón Sân bay
+- Chi phí taxi, xe dịch vụ công nghệ (Grab, Be, Uber) từ nơi ở/văn phòng đến sân bay và ngược lại được thanh toán theo thực tế nhưng không vượt quá $35 mỗi lượt di chuyển.
+- Nhân viên phải gửi kèm e-receipt (hóa đơn điện tử của ứng dụng đặt xe) thể hiện rõ điểm đón, điểm đến và thời gian trùng khớp với lịch trình chuyến bay.
+- Tiền tip (tiền boa cho tài xế) không thuộc phạm vi chi trả của công ty.
+
+## Điều 2: Phụ cấp Lưu trú Vùng miền (Per Diem / Incidental Allowance)
+- Đối với chuyến công tác kéo dài từ 3 ngày trở lên tại các đô thị loại 1 (Hà Nội, TP.HCM, Singapore, Tokyo, New York), nhân viên được hưởng phụ cấp lưu trú vặt (incidentals) mức $20/ngày để chi trả nước uống và liên lạc cá nhân phục vụ công việc.
+- Chuyến công tác dưới 3 ngày không áp dụng khoản phụ cấp này.
+
+## Điều 3: Chi phí Tiếp khách Ngoại giao trong Chuyến công tác
+- Chi phí ăn uống tiếp khách hàng, đối tác quan trọng phải được Trưởng bộ phận phê duyệt trước qua email.
+- Hóa đơn tiếp khách phải ghi rõ tên công ty đối tác, số lượng người tham dự và mục đích kinh doanh. Chi phí tiếp khách tối đa không quá $50/người tham dự.

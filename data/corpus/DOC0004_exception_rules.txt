@@ -1,0 +1,30 @@
+---
+doc_id: DOC0004
+title: Quy định chứng từ hợp lệ và quy trình xử lý ngoại lệ
+category: exception_rules
+version: 1.2
+effective_date: 2024-05-10
+owner: Internal Audit Department
+status: active
+---
+
+# Acme Corp — Quy định Chứng từ Hợp lệ và Quy trình Xử lý Ngoại lệ
+
+## Điều 1: Tiêu chuẩn Chứng từ và Hóa đơn Hợp lệ
+Một hóa đơn, chứng từ được xem là hợp lệ khi đáp ứng đầy đủ các tiêu chí:
+1. Có tên đơn vị bán hàng, mã số thuế (nếu có), ngày phát hành và chi tiết từng mặt hàng/dịch vụ.
+2. Tên người mua hàng phải thể hiện tên công ty Acme Corp hoặc tên nhân viên đi công tác kèm mã nhân viên.
+3. Không chấp nhận biên lai viết tay không có dấu mộc hoặc phiếu tính tiền tạm tính (provisional bill).
+
+## Điều 2: Xử lý Trường hợp Mất Hóa đơn Gốc (Lost Receipts)
+- Nếu nhân viên làm mất hóa đơn tiền phòng khách sạn hoặc vé máy bay, nhân viên phải xin cấp lại bản sao điện tử (electronic copy) hoặc giấy xác nhận thanh toán có đóng dấu của đơn vị cung cấp dịch vụ.
+- Đồng thời, nhân viên phải lập Bản giải trình thất lạc chứng từ (Lost Receipt Declaration Form) có chữ ký xác nhận của Quản lý trực tiếp.
+- Trường hợp thiếu chứng từ mà không có giấy xác nhận hợp lệ, hệ thống kiểm toán phải đưa ra trạng thái YÊU CẦU BỔ SUNG CHỨNG TỪ (REQUEST_MORE_INFO) và tạm dừng thanh toán khoản tiền đó.
+
+## Điều 3: Các Chi phí Tuyệt đối Không Được Thanh toán
+Công ty nghiêm cấm hoàn trả các khoản chi phí mang tính chất cá nhân sau:
+- Mua quà lưu niệm, quà tặng cho gia đình, người thân hoặc bạn bè.
+- Vé tham quan giải trí, xem phim, xem hòa nhạc, dịch vụ spa, phòng gym cá nhân.
+- Chi phí bảo dưỡng, vé máy bay hoặc thức ăn cho thú cưng mang theo trong chuyến công tác.
+- Học phí, sách báo cá nhân hoặc chi phí tiêu dùng không liên quan đến công vụ.
+- Mua sắm trang thiết bị IT cá nhân (bàn phím cơ, tai nghe cá nhân, chuột máy tính) trừ khi được phòng IT phê duyệt bằng văn bản trước chuyến đi.

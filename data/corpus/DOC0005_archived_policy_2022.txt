@@ -1,0 +1,23 @@
+---
+doc_id: DOC0005
+title: Quy chế chi tiêu công tác Acme Corp năm 2022 (Lưu trữ - Đã hết hiệu lực)
+category: travel_policy_archived
+version: 1.0
+effective_date: 2022-01-01
+owner: HR Department
+status: archived
+---
+
+# Acme Corp — Quy chế Chi tiêu Công tác Cũ (Năm 2022 — ĐÃ HẾT HIỆU LỰC)
+
+## Lưu ý Quan trọng:
+Văn bản này đã được thay thế hoàn toàn bởi Quy chế chi tiêu công tác v2.0 (DOC0001) có hiệu lực từ ngày 01/01/2024. Văn bản này chỉ dùng cho mục đích tra cứu lưu trữ lịch sử kiểm toán.
+
+## Điều 1: Hạn mức Tiền ăn Công tác (Cũ)
+- Định mức tiền ăn tối đa cho nhân viên đi công tác trong năm 2022 là $40 mỗi ngày (hoặc tương đương $40/day).
+- Khoản chi vượt quá $40/ngày sẽ không được hoàn trả.
+
+## Điều 2: Tiêu chuẩn Khách sạn (Cũ)
+- Tiêu chuẩn khách sạn cho nhân viên thông thường tối đa là $80/đêm.
+
+Mọi nhân viên viện dẫn văn bản này trong năm tài chính 2024 trở đi đều phải được hướng dẫn cập nhật sang hạn mức mới theo DOC0001.
