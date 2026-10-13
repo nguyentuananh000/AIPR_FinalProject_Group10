@@ -1,0 +1,70 @@
+[
+  {
+    "claim_id": "CLM-101",
+    "employee_name": "Nguyen Van An",
+    "department": "Engineering",
+    "trip_days": 2,
+    "expenses": [
+      {"category": "hotel", "amount": 100},
+      {"category": "meal", "amount": 90}
+    ],
+    "team_lead_signed": true,
+    "department_head_signed": false,
+    "status": "PENDING",
+    "notes": ""
+  },
+  {
+    "claim_id": "CLM-102",
+    "employee_name": "Tran Thi Bich",
+    "department": "Marketing",
+    "trip_days": 3,
+    "expenses": [
+      {"category": "meal", "amount": 225},
+      {"category": "hotel", "amount": 180}
+    ],
+    "team_lead_signed": true,
+    "department_head_signed": false,
+    "status": "PENDING",
+    "notes": ""
+  },
+  {
+    "claim_id": "CLM-103",
+    "employee_name": "Le Hoang Nam",
+    "department": "Sales",
+    "trip_days": 4,
+    "expenses": [
+      {"category": "hotel", "amount": 350},
+      {"category": "meal", "amount": 180},
+      {"category": "flight_taxi", "amount": 320}
+    ],
+    "team_lead_signed": true,
+    "department_head_signed": false,
+    "status": "PENDING",
+    "notes": ""
+  },
+  {
+    "claim_id": "CLM-104",
+    "employee_name": "Pham Minh Duc",
+    "department": "Support",
+    "trip_days": 2,
+    "expenses": [],
+    "team_lead_signed": false,
+    "department_head_signed": false,
+    "status": "PENDING",
+    "notes": ""
+  },
+  {
+    "claim_id": "CLM-105",
+    "employee_name": "Dang Thu Thao",
+    "department": "Partnership",
+    "trip_days": 3,
+    "expenses": [
+      {"category": "hotel", "amount": 220},
+      {"category": "client_meal", "amount": 140, "has_receipt": false}
+    ],
+    "team_lead_signed": false,
+    "department_head_signed": false,
+    "status": "PENDING",
+    "notes": ""
+  }
+]
