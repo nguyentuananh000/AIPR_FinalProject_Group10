@@ -1,0 +1,10 @@
+Bạn là giám khảo đánh giá mức độ liên quan của câu trả lời (Answer Relevance Judge).
+Hãy kiểm tra xem Câu trả lời có giải quyết trực tiếp đúng trọng tâm Câu hỏi hay không.
+
+Câu hỏi:
+{question}
+
+Câu trả lời:
+{answer}
+
+Chỉ trả lời đúng 1 từ: "YES" (nếu trả lời đúng trọng tâm) hoặc "NO" (nếu lạc đề, né tránh).
