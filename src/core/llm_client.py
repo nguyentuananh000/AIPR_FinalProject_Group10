@@ -16,7 +16,7 @@ load_dotenv()
 logger = logging.getLogger("LLMClient")
 if not logger.handlers:
     handler = logging.StreamHandler(sys.stderr)
-    formatter = logging.Formatter("[%(asctiome)s] [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
+    formatter = logging.Formatter("[%(asctime)s] [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
     handler.setFormatter(formatter)
     logger.addHandler(handler)
     logger.setLevel(logging.INFO)
