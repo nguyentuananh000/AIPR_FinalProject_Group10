@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
+from datetime import datetime
 from src.core.llm_client import LLMClient
 from src.rag.chunker import PolicyChunker
 from src.rag.hybrid_retriever import HybridRetriever
@@ -54,12 +55,13 @@ def generate_traces():
 
         ans, usage = llm.chat(messages, temperature=0.0)
 
+        now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         trace_text = (
             f"=======================================================\n"
             f"REAL RUN TRACE LOG — AIPR FINAL PROJECT GROUP 10\n"
             f"=======================================================\n"
             f"Query: {query}\n"
-            f"Timestamp: {usage.model}\n\n"
+            f"Timestamp: {now_str}\n\n"
             f"--- [RAG RETRIEVAL STAGE] ---\n"
             f"Total Chunks Retrieved: {len(items)}\n"
         )

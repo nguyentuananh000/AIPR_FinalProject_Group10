@@ -2,7 +2,7 @@
 REAL RUN TRACE LOG — AIPR FINAL PROJECT GROUP 10
 =======================================================
 Query: Hạn mức thanh toán chi phí ăn uống mỗi ngày cho nhân viên đi công tác là bao nhiêu?
-Timestamp: qwen/qwen3.8-27b
+Timestamp: 2026-10-18 01:15:10
 
 --- [RAG RETRIEVAL STAGE] ---
 Total Chunks Retrieved: 3
@@ -14,7 +14,7 @@ Rank 3: [DOC0001] Điều 2: Tiêu chuẩn Khách sạn và Lưu trú | Score=0.
 Model: qwen/qwen3.8-27b
 Prompt Tokens: 836
 Total Tokens: 869
-Latency: 0.657s
+Latency: 0.675s
 
 --- [GENERATED ANSWER] ---
 Hạn mức thanh toán chi phí ăn uống mỗi ngày cho nhân viên đi công tác là $50 [DOC0001, Điều 3].
