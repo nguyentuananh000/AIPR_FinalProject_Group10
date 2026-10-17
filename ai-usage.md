@@ -15,7 +15,7 @@ Trong suốt quá trình thực hiện đồ án, nhóm đã sử dụng các c�
 1. **Google Antigravity / Gemini CLI**
 2. **Groq API**
 3. **Google Generative Language API** (Mô hình: `models/gemini-embedding-001`) để tạo vector biểu diễn ngữ nghĩa 3.072 chiều.
-
+4. OpenAI Codex — hỗ trợ đọc hiểu cấu trúc dự án, giải thích luồng Agent/MCP, gỡ lỗi tích hợp Groq native tool call và xây dựng script chạy trace RAG một câu hỏi. Mã nguồn sau khi được hỗ trợ vẫn được thành viên kiểm tra và chạy trong môi trường dự án.
 ---
 
 ## 2. PHẠM VI SỬ DỤNG CHO TỪNG THÀNH VIÊN VÀ HẠNG MỤC
@@ -41,7 +41,17 @@ Trong suốt quá trình thực hiện đồ án, nhóm đã sử dụng các c�
 * **Vòng lặp ReAct Agent Loop & Safe Parser:**
   - Dùng AI tham khảo biểu thức chính quy (Regex) trong `parser.py` để trích xuất `Action: tool_name({...})` an toàn, chống crash khi LLM trả về thiếu dấu ngoặc.
   - Cài đặt cơ chế Side Effect + Verification: Sau khi gọi `submit_audit_decision`, agent tự động gọi `get_claim_status` để đối soát lại trạng thái lưu trữ trong cơ sở dữ liệu.
+  - Mô hình dữ liệu nghiệp vụ: sử dụng AI để tham khảo cấu trúc ExpenseItem, ExpenseClaim và AuditDecision trong src/models/expense.py. Thành viên rà soát các trường dữ liệu và phương thức tính tổng chi phí theo hồ sơ.
 
+  - Schema tham số MCP: tham khảo AI khi xây dựng các lớp tham số GetClaimDetailsParams, GetClaimStatusParams và SubmitAuditDecisionParams trong src/models/mcp_schema.py. MCP Server hiện công bố input schema thông qua chữ ký các hàm tool; các dataclass schema mô tả cấu trúc dữ liệu và chưa được dùng trực tiếp để tạo tham số gọi tool.
+
+  - MCP Server và Client: dùng AI hỗ trợ tìm hiểu cách chạy server qua Stdio, đăng ký các tool đọc/ghi hồ sơ, giữ logging trên sys.stderr và khám phá danh sách tool cùng input schema bằng list_tools().
+
+  - ReAct Agent và parser: tham khảo AI khi thiết kế vòng lặp giới hạn MAX_STEPS = 12, phân loại phản hồi thành action hoặc final answer, kiểm tra JSON arguments và chuyển lỗi tool thành Observation để agent xử lý tiếp.
+
+  - Side Effect + Verify: xây dựng luồng tự động gọi get_claim_status sau khi submit_audit_decision ghi thành công, sau đó so sánh trạng thái đọc lại với trạng thái được yêu cầu.
+
+  - Gỡ lỗi và trace: dùng Codex hỗ trợ xử lý lỗi Groq khi mô hình trả native tool call, điều chỉnh Client truyền tool schema đã khám phá vào lời gọi mô hình và ghi lại Action/Observation. Codex cũng hỗ trợ tạo script chạy một truy vấn RAG và lưu retrieval, token, độ trễ cùng câu trả lời vào trace log.
 ---
 
 ## 3. CÁC PROMPT CHÍNH ĐÃ SỬ DỤNG KHI TƯƠNG TÁC VỚI AI
@@ -55,6 +65,17 @@ Trong suốt quá trình thực hiện đồ án, nhóm đã sử dụng các c�
 ### Prompt 3: Thiết kế cơ chế Side-Effect + Verify cho Agent
 > *"Hãy hướng dẫn tôi cách hiện thực hóa cơ chế Side Effect kèm Verify trong ReAct Agent loop theo yêu cầu 2.7. Khi agent gọi tool ghi dữ liệu `submit_audit_decision`, vòng lặp phải tự động gọi thêm tool đọc `get_claim_status` để xác minh xem trạng thái lưu trong cơ sở dữ liệu có khớp với quyết định vừa ghi hay không."*
 
+### Prompt 4: Thiết kế dataclass cho dữ liệu kiểm toán
+
+“Hãy giải thích và đề xuất cấu trúc dataclass Python cho ExpenseItem, ExpenseClaim và AuditDecision của hệ thống kiểm toán chi phí công tác. Nêu vai trò từng trường, cách khởi tạo danh sách chi phí an toàn bằng default_factory và cách tính tổng số tiền yêu cầu.”
+
+### Prompt 5: Xây dựng MCP Server và Client
+
+“Hãy hướng dẫn xây dựng MCP Server Python qua Stdio với ba tool get_claim_details, submit_audit_decision và get_claim_status. Server đọc và cập nhật database JSON, kiểm tra mã hồ sơ/trạng thái, trả lỗi dạng chuỗi và ghi log ra stderr. Hướng dẫn Client khám phá tools cùng input schema bằng list_tools() thay vì khai báo cứng.”
+
+### Prompt 6: Gỡ lỗi ReAct Agent và xác minh thao tác ghi
+
+“Hãy rà soát vòng lặp ReAct tích hợp MCP. Agent cần giới hạn số bước, xử lý phản hồi sai định dạng và lỗi tool an toàn. Sau khi submit_audit_decision thành công, tự gọi get_claim_status để đọc lại trạng thái. Phân tích trace để phân biệt lời gọi tool, Observation và câu trả lời cuối.”
 ---
 
 ## 4. PHẦN CODE DO AI HỖ TRỢ SINH RA VS. TỰ KIỂM SOÁT VÀ CHỈNH SỬA
