@@ -1,0 +1,104 @@
+﻿sample_id,category,question,config,retrieved_docs,hit_rate,faithfulness,relevance,is_no_answer,latency_seconds,total_tokens,generated_answer
+TEST001,meal_limit,Hạn mức thanh toán chi phí ăn uống mỗi ngày cho nhân viên đi công tác là bao nhiêu?,dense,"DOC0001, DOC0003, DOC0001",1.0,0.5,1.0,False,0.821,1123,"Hạn mức thanh toán chi phí ăn uống mỗi ngày cho nhân viên đi công tác là **$50 mỗi ngày** (tối đa).  
+[DOC0001, Điều 3]"
+TEST002,hotel_limit,Tiêu chuẩn phòng khách sạn cho nhân viên thông thường tại các thành phố lớn là bao nhiêu một đêm?,dense,"DOC0001, DOC0003, DOC0001",1.0,1.0,1.0,False,0.581,1155,"Tiêu chuẩn phòng khách sạn cho nhân viên thông thường tại các thành phố lớn là **$120/đêm** (mức trần tối đa). [DOC0001, Điều 2]"
+TEST003,approval_matrix,Khoản chi tiêu công tác có tổng giá trị $350 thuộc thẩm quyền phê duyệt của cấp nào?,dense,"DOC0002, DOC0002, DOC0002",1.0,0.33,1.0,False,0.584,1143,"Khoản chi tiêu công tác trị giá **$350** thuộc thẩm quyền phê duyệt của **Trưởng nhóm trực tiếp (Team Lead / Line Manager)**.  
+
+[DOC0002, Điều 2]"
+TEST004,approval_matrix,"Khoản chi phí trị giá $1,200 cần những ai ký duyệt để được thanh toán?",dense,"DOC0002, DOC0002, DOC0002",1.0,0.75,1.0,False,7.277,1326,"Khoản chi phí $1,200 (tổng chi phí > $500 và ≤ $2,000) phải được **phê duyệt bởi Trưởng bộ phận (Department Head / Director)** để được thanh toán. Nếu chỉ có chữ ký của Team Lead, hệ thống sẽ tự động chuyển tiếp (ESCALATE) lên Trưởng bộ phận.  
+
+[DOC0002, Điều 2]"
+TEST005,transportation,Hạn mức thanh toán tiền taxi từ sân bay về khách sạn là bao nhiêu một chuyến?,dense,"DOC0003, DOC0001, DOC0001",1.0,1.0,1.0,False,7.031,1149,"Hạn mức thanh toán tiền taxi (hoặc xe dịch vụ công nghệ) từ sân bay về khách sạn là **$35 mỗi lượt di chuyển**.  
+
+[DOC0003, Điều 1]"
+TEST006,allowance,Điều kiện để nhân viên được nhận phụ cấp công tác (per diem) $20/ngày là gì?,dense,"DOC0003, DOC0001, DOC0001",1.0,0.33,1.0,False,5.75,1840,"Để được nhận phụ cấp công tác (per diem) $20/ngày, nhân viên phải đáp ứng hai điều kiện sau:  
+1. Chuyến công tác kéo dài **ít nhất 3 ngày**.  
+2. Địa điểm công tác thuộc các thành phố loại 1: **Hà Nội, TP.HCM, Singapore, Tokyo, New York**.  
+
+Nếu chuyến công tác dưới 3 ngày hoặc không nằm trong danh sách các thành phố trên, phụ cấp $20/ngày sẽ không được áp dụng.  
+[DOC0003, Điều 2]"
+TEST007,submission_deadline,Thời hạn tối đa để nộp báo cáo chi tiêu và hóa đơn thanh toán sau chuyến công tác là bao lâu?,dense,"DOC0001, DOC0003, DOC0004",1.0,1.0,1.0,False,8.032,1145,"Thời hạn tối đa để nộp báo cáo chi tiêu và hóa đơn thanh toán sau chuyến công tác là **30 ngày** kể từ ngày kết thúc chuyến công tác (hoặc ngày phát sinh chi phí).  
+[DOC0001, Điều 5]"
+TEST008,exception_rules,Trường hợp nhân viên làm mất hóa đơn gốc thì quy trình xử lý giải trình như thế nào?,dense,"DOC0004, DOC0004, DOC0004",1.0,1.0,1.0,False,9.533,1380,"Quy trình xử lý khi nhân viên làm mất hóa đơn gốc như sau:
+
+1. **Yêu cầu tài liệu thay thế**  
+   - Nhân viên phải **xin cấp lại bản sao điện tử (electronic copy)** hoặc **giấy xác nhận thanh toán có đóng dấu** của đơn vị cung cấp dịch vụ.  
+   - (Trích dẫn: [DOC0004, Điều 2]).
+
+2. **Lập Bản giải trình thất lạc chứng từ**  
+   - Nhân viên phải **lập Bản giải trình thất lạc chứng từ (Lost Receipt Declaration Form)**.  
+   - Bản giải trình này phải được **ký xác nhận bởi Quản lý trực tiếp**.  
+   - (Trích dẫn: [DOC0004, Điều 2]).
+
+3. **Xử lý khi không có giấy xác nhận hợp lệ**  
+   - Nếu nhân viên không có bản sao điện tử hoặc giấy xác nhận hợp lệ, hệ thống kiểm toán sẽ đưa ra trạng thái **YÊU CẦU BỔ SUNG CHỨNG TỪ (REQUEST_MORE_INFO)** và **tạm dừng thanh toán khoản tiền đó**.  
+   - (Trích dẫn: [DOC0004, Điều 2]).
+
+> **Tóm tắt**: Khi mất hóa đơn gốc, nhân viên phải nộp bản sao điện tử hoặc giấy xác nhận có dấu, lập Bản giải trình thất lạc được ký bởi quản lý, và nếu không có tài liệu thay thế hợp lệ, thanh toán sẽ bị tạm dừng cho đến khi bổ sung chứng từ."
+TEST009,exception_rules,Các chi phí cá nhân nào tuyệt đối không được công ty bồi hoàn?,dense,"DOC0004, DOC0001, DOC0003",1.0,1.0,1.0,False,7.281,1425,"Các chi phí cá nhân tuyệt đối không được công ty bồi hoàn (được quy định tại [DOC0004, Điều 3]):
+
+- Mua quà lưu niệm, quà tặng cho gia đình, người thân hoặc bạn bè.  
+- Vé tham quan giải trí, xem phim, xem hòa nhạc, dịch vụ spa, phòng gym cá nhân.  
+- Chi phí bảo dưỡng, vé máy bay hoặc thức ăn cho thú cưng mang theo trong chuyến công tác.  
+- Học phí, sách báo cá nhân hoặc chi phí tiêu dùng không liên quan đến công vụ.  
+- Mua sắm trang thiết bị IT cá nhân (bàn phím cơ, tai nghe cá nhân, chuột máy tính) trừ khi được phòng IT phê duyệt bằng văn bản trước chuyến đi."
+TEST010,approval_matrix,"Khoản chi trên $2,000 có được thanh toán nếu chỉ có Trưởng phòng ban ký duyệt không?",dense,"DOC0002, DOC0002, DOC0002",1.0,1.0,1.0,False,9.006,1252,"Không.  
+Theo **[DOC0002, Điều 2]**:  
+- Mức 3 (Tổng chi phí > $2,000) yêu cầu **chuyển lên Ban Giám đốc (C‑level / CFO)** xem xét và phê duyệt ngoại lệ.  
+
+Vì vậy, chỉ có chữ ký của Trưởng phòng ban (Department Head) không đủ thẩm quyền để thanh toán khoản chi trên $2,000."
+TEST011,no_answer,Công ty có hỗ trợ chi phí mua quà lưu niệm cho người thân khi nhân viên đi công tác nước ngoài không?,dense,"DOC0004, DOC0003, DOC0003",1.0,1.0,1.0,False,9.1,1159,"Không, công ty không hỗ trợ chi phí mua quà lưu niệm cho người thân khi nhân viên đi công tác nước ngoài.  
+[DOC0004, Điều 3] ghi rõ “Công ty nghiêm cấm hoàn trả các khoản chi phí mang tính chất cá nhân sau: Mua quà lưu niệm, quà tặng cho gia đình, người thân hoặc bạn bè.”"
+TEST012,no_answer,Nhân viên thông thường có được thanh toán vé máy bay hạng Thương gia (Business Class) không?,dense,"DOC0001, DOC0001, DOC0001",1.0,1.0,1.0,False,8.35,1282,"Không. Theo Điều 4 của quy chế chi tiêu công tác Acme Corp, “Vé máy bay: Áp dụng hạng vé phổ thông (Economy Class) cho toàn bộ các chặng bay có thời gian dưới 6 giờ” [DOC0001, Điều 4]. Chính sách không cho phép thanh toán vé hạng Thương gia (Business Class) cho nhân viên thông thường."
+TEST013,no_answer,Công ty hỗ trợ bao nhiêu tiền vé xem hòa nhạc hoặc giải trí cùng đối tác vào buổi tối?,dense,"DOC0003, DOC0001, DOC0004",1.0,1.0,1.0,False,5.632,1331,"Công ty **không hỗ trợ** chi phí vé xem hòa nhạc hoặc các hoạt động giải trí khác cùng đối tác vào buổi tối.  
+[DOC0004, Điều 3] ghi rõ rằng “Vé tham quan giải trí, xem phim, xem hòa nhạc, dịch vụ spa, phòng gym cá nhân” là các khoản chi phí **tuyệt đối không được thanh toán**."
+TEST014,no_answer,Nếu nhân viên tự lái xe riêng đi công tác thì mức phụ cấp hao mòn xe tính theo cây số là bao nhiêu?,dense,"DOC0003, DOC0003, DOC0001",1.0,0.0,0.0,False,7.97,1110,Tôi không tìm thấy đủ thông tin trong tài liệu quy chế để trả lời câu hỏi này.
+TEST015,version_conflict,Mức chi tiêu tiền ăn mỗi ngày theo quy chế cũ năm 2022 có còn được áp dụng không?,dense,"DOC0001, DOC0003, DOC0001",1.0,0.0,0.0,False,7.172,1251,Tôi không tìm thấy đủ thông tin trong tài liệu quy chế để trả lời câu hỏi này.
+TEST001,meal_limit,Hạn mức thanh toán chi phí ăn uống mỗi ngày cho nhân viên đi công tác là bao nhiêu?,hybrid,"DOC0001, DOC0003, DOC0001",1.0,1.0,1.0,False,10.223,1123,"Hạn mức thanh toán chi phí ăn uống mỗi ngày cho nhân viên đi công tác là **$50 mỗi ngày** (tối đa).  
+[DOC0001, Điều 3]"
+TEST002,hotel_limit,Tiêu chuẩn phòng khách sạn cho nhân viên thông thường tại các thành phố lớn là bao nhiêu một đêm?,hybrid,"DOC0001, DOC0001, DOC0003",1.0,1.0,1.0,False,10.008,1146,"Tiêu chuẩn phòng khách sạn cho nhân viên thông thường tại các thành phố lớn là **$120/đêm** (mức trần tối đa). [DOC0001, Điều 2]"
+TEST003,approval_matrix,Khoản chi tiêu công tác có tổng giá trị $350 thuộc thẩm quyền phê duyệt của cấp nào?,hybrid,"DOC0002, DOC0002, DOC0002",1.0,0.33,1.0,False,9.043,1143,"Khoản chi tiêu công tác trị giá **$350** thuộc thẩm quyền phê duyệt của **Trưởng nhóm trực tiếp (Team Lead / Line Manager)**.  
+
+[DOC0002, Điều 2]"
+TEST004,approval_matrix,"Khoản chi phí trị giá $1,200 cần những ai ký duyệt để được thanh toán?",hybrid,"DOC0002, DOC0002, DOC0002",1.0,0.75,1.0,False,8.283,1326,"Khoản chi phí $1,200 (tổng chi phí > $500 và ≤ $2,000) phải được **phê duyệt bởi Trưởng bộ phận (Department Head / Director)** để được thanh toán. Nếu chỉ có chữ ký của Team Lead, hệ thống sẽ tự động chuyển tiếp (ESCALATE) lên Trưởng bộ phận.  
+
+[DOC0002, Điều 2]"
+TEST005,transportation,Hạn mức thanh toán tiền taxi từ sân bay về khách sạn là bao nhiêu một chuyến?,hybrid,"DOC0003, DOC0001, DOC0001",1.0,1.0,1.0,False,7.96,1149,"Hạn mức thanh toán tiền taxi (hoặc xe dịch vụ công nghệ) từ sân bay về khách sạn là **$35 mỗi lượt di chuyển**.  
+
+[DOC0003, Điều 1]"
+TEST006,allowance,Điều kiện để nhân viên được nhận phụ cấp công tác (per diem) $20/ngày là gì?,hybrid,"DOC0003, DOC0001, DOC0001",1.0,0.83,1.0,False,10.501,1621,"Để được nhận phụ cấp công tác (per diem) $20/ngày, nhân viên phải thực hiện chuyến công tác kéo dài **ít nhất 3 ngày** tại **các đô thị loại 1** (Hà Nội, TP.HCM, Singapore, Tokyo, New York). Chuyến công tác dưới 3 ngày không áp dụng khoản phụ cấp này. [DOC0003, Điều 2]"
+TEST007,submission_deadline,Thời hạn tối đa để nộp báo cáo chi tiêu và hóa đơn thanh toán sau chuyến công tác là bao lâu?,hybrid,"DOC0001, DOC0001, DOC0003",1.0,1.0,1.0,False,10.18,1159,"Thời hạn tối đa để nộp báo cáo chi tiêu và hóa đơn thanh toán sau chuyến công tác là **30 ngày** kể từ ngày kết thúc chuyến công tác (hoặc ngày phát sinh chi phí). [DOC0001, Điều 5]"
+TEST008,exception_rules,Trường hợp nhân viên làm mất hóa đơn gốc thì quy trình xử lý giải trình như thế nào?,hybrid,"DOC0004, DOC0004, DOC0004",1.0,0.89,1.0,False,4.498,1381,"Quy trình xử lý khi nhân viên làm mất hóa đơn gốc như sau:
+
+1. **Yêu cầu tài liệu thay thế**  
+   - Nhân viên phải **xin cấp lại bản sao điện tử (electronic copy)** hoặc **giấy xác nhận thanh toán có đóng dấu** của đơn vị cung cấp dịch vụ.  
+   - (Trích dẫn: [DOC0004, Điều 2]).
+
+2. **Lập Bản giải trình thất lạc chứng từ**  
+   - Nhân viên phải **lập Bản giải trình thất lạc chứng từ (Lost Receipt Declaration Form)**.  
+   - Bản giải trình này phải được **ký xác nhận bởi Quản lý trực tiếp**.  
+   - (Trích dẫn: [DOC0004, Điều 2]).
+
+3. **Xử lý khi không có giấy xác nhận hợp lệ**  
+   - Nếu nhân viên không có bản sao điện tử hoặc giấy xác nhận hợp lệ, hệ thống kiểm toán sẽ đưa ra trạng thái **YÊU CẦU BỔ SUNG CHỨNG TỪ (REQUEST_MORE_INFO)** và **tạm dừng thanh toán khoản tiền đó**.  
+   - (Trích dẫn: [DOC0004, Điều 2]).
+
+> **Tóm tắt**: Khi mất hóa đơn gốc, nhân viên phải nộp bản sao điện tử hoặc giấy xác nhận có dấu, lập Bản giải trình thất lạc được ký bởi quản lý trực tiếp; nếu không có tài liệu xác nhận hợp lệ, thanh toán sẽ bị tạm dừng và yêu cầu bổ sung chứng từ."
+TEST009,exception_rules,Các chi phí cá nhân nào tuyệt đối không được công ty bồi hoàn?,hybrid,"DOC0004, DOC0001, DOC0001",1.0,1.0,1.0,False,7.31,1325,"Các chi phí cá nhân tuyệt đối không được công ty bồi hoàn (được quy định tại [DOC0004, Điều 3]):
+
+- Mua quà lưu niệm, quà tặng cho gia đình, người thân hoặc bạn bè.  
+- Vé tham quan giải trí, xem phim, xem hòa nhạc, dịch vụ spa, phòng gym cá nhân.  
+- Chi phí bảo dưỡng, vé máy bay hoặc thức ăn cho thú cưng mang theo trong chuyến công tác.  
+- Học phí, sách báo cá nhân hoặc chi phí tiêu dùng không liên quan đến công vụ.  
+- Mua sắm trang thiết bị IT cá nhân (bàn phím cơ, tai nghe cá nhân, chuột máy tính) trừ khi được phòng IT phê duyệt bằng văn bản trước chuyến đi."
+TEST010,approval_matrix,"Khoản chi trên $2,000 có được thanh toán nếu chỉ có Trưởng phòng ban ký duyệt không?",hybrid,"DOC0002, DOC0002, DOC0002",1.0,0.5,1.0,False,6.196,1270,"Không.  
+Theo **[DOC0002, Điều 2]**:  
+- Mức 3 (Tổng chi phí > $2,000) yêu cầu **chuyển lên Ban Giám đốc (C‑level / CFO)** xem xét và phê duyệt ngoại lệ.  
+
+Vì vậy, chỉ có chữ ký của Trưởng phòng ban (Department Head) không đủ thẩm quyền để thanh toán khoản chi trên $2,000. Hệ thống phải **ESCALATE** hồ sơ lên Ban Giám đốc."
+TEST011,no_answer,Công ty có hỗ trợ chi phí mua quà lưu niệm cho người thân khi nhân viên đi công tác nước ngoài không?,hybrid,"DOC0004, DOC0003, DOC0003",1.0,1.0,1.0,False,7.567,1159,"Không. Theo [DOC0004, Điều 3] công ty nghiêm cấm hoàn trả các khoản chi phí mang tính chất cá nhân, trong đó có “mua quà lưu niệm, quà tặng cho gia đình, người thân hoặc bạn bè”."
+TEST012,no_answer,Nhân viên thông thường có được thanh toán vé máy bay hạng Thương gia (Business Class) không?,hybrid,"DOC0001, DOC0001, DOC0001",1.0,0.75,1.0,False,7.337,1282,"Không. Theo Điều 4 của quy chế chi tiêu công tác Acme Corp, “Vé máy bay: Áp dụng hạng vé phổ thông (Economy Class) cho toàn bộ các chặng bay có thời gian dưới 6 giờ” [DOC0001, Điều 4]. Chính sách không cho phép thanh toán vé hạng Thương gia (Business Class) cho nhân viên thông thường."
+TEST013,no_answer,Công ty hỗ trợ bao nhiêu tiền vé xem hòa nhạc hoặc giải trí cùng đối tác vào buổi tối?,hybrid,"DOC0004, DOC0003, DOC0001",1.0,1.0,1.0,False,6.088,1310,"Công ty **không hỗ trợ** bất kỳ khoản chi phí nào cho vé xem hòa nhạc hoặc giải trí cùng đối tác vào buổi tối.  
+Theo Điều 3 của [DOC0004, Điều 3] – “Các Chi phí Tuyệt đối Không Được Thanh toán”, vé tham quan giải trí, xem phim, xem hòa nhạc, dịch vụ spa, phòng gym cá nhân đều nằm trong danh mục chi phí không được thanh toán."
+TEST014,no_answer,Nếu nhân viên tự lái xe riêng đi công tác thì mức phụ cấp hao mòn xe tính theo cây số là bao nhiêu?,hybrid,"DOC0003, DOC0001, DOC0003",1.0,0.0,0.0,False,9.054,1131,Tôi không tìm thấy đủ thông tin trong tài liệu quy chế để trả lời câu hỏi này.
+TEST015,version_conflict,Mức chi tiêu tiền ăn mỗi ngày theo quy chế cũ năm 2022 có còn được áp dụng không?,hybrid,"DOC0001, DOC0001, DOC0003",1.0,0.0,0.0,False,8.673,1171,Tôi không tìm thấy đủ thông tin trong tài liệu quy chế để trả lời câu hỏi này.

@@ -1,0 +1,6 @@
+Hãy tách câu trả lời dưới đây thành các mệnh đề khẳng định thực tế (factual claims) đơn lẻ và độc lập.
+Mỗi mệnh đề viết trên 1 dòng riêng biệt, bắt đầu bằng dấu gạch ngang (-).
+Không thêm bất kỳ câu dẫn dắt hay kết luận nào.
+
+Câu trả lời cần tách:
+{answer}
