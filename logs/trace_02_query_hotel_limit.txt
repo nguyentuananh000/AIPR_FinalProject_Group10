@@ -2,7 +2,7 @@
 REAL RUN TRACE LOG — AIPR FINAL PROJECT GROUP 10
 =======================================================
 Query: Tiêu chuẩn phòng khách sạn cho nhân viên thông thường tại các thành phố lớn là bao nhiêu một đêm?
-Timestamp: qwen/qwen3.8-27b
+Timestamp: 2026-10-18 01:15:11
 
 --- [RAG RETRIEVAL STAGE] ---
 Total Chunks Retrieved: 3
@@ -14,7 +14,7 @@ Rank 3: [DOC0003] Điều 2: Phụ cấp Lưu trú Vùng miền (Per Diem / Inci
 Model: qwen/qwen3.8-27b
 Prompt Tokens: 870
 Total Tokens: 913
-Latency: 0.388s
+Latency: 0.381s
 
 --- [GENERATED ANSWER] ---
 Theo quy chế, tiêu chuẩn phòng khách sạn cho nhân viên thông thường tại các thành phố lớn là mức trần tối đa $120/đêm [DOC0001, Điều 2].
