@@ -32,6 +32,7 @@ async def run_with_mcp(
 
         tool_descriptions = []
         tool_names = set()
+        llm_tools = []
 
         for tool in discovered_tools:
             tool_names.add(tool.name)
@@ -43,15 +44,22 @@ async def run_with_mcp(
                 f"- {tool.name}({{{params_example}}}): {description}"
             )
 
+            llm_tools.append({
+                "type": "function",
+                "function": {
+                    "name": tool.name,
+                    "description": description,
+                    "parameters": tool.input_schema,
+                },
+            })
+
         prompt_with_tools = (
             system_prompt
-            + "\n\nAvailable tools:\n"
+            + "\n\nAvailable MCP tools:\n"
             + "\n".join(tool_descriptions)
-            + '\n\nIMPORTANT FORMAT RULE:\n'
-            + 'Never output system tool call objects. Output ONLY plain text using either:\n'
-            + 'Action: tool_name({"argument": "value"})\n'
-            + 'or:\n'
-            + 'Final Answer: <your final response>\n'
+            + "\n\nUse only the tools listed above when a tool is needed. "
+            + "Do not invent tool names or arguments. After reviewing tool results, "
+            + "give the user a concise final answer."
         )
 
         async def tool_call(
@@ -90,4 +98,5 @@ async def run_with_mcp(
             tool_call=tool_call,
             system_prompt=prompt_with_tools,
             model=model,
+            tools=llm_tools,
         )
