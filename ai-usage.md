@@ -32,6 +32,15 @@ Trong suốt quá trình thực hiện đồ án, nhóm đã sử dụng các c�
 * **Hệ thống đánh giá RAGAS:**
   - Dùng AI hỗ trợ viết prompt phân tách Claim và prompt giám khảo LLM Judge (`judge_faithfulness.txt`, `judge_relevance.txt`).
   - Viết script `run_eval.py` tự động xuất `eval_results.csv` và vẽ biểu đồ cột `eval_comparison.png` bằng thư viện `matplotlib`.
+* **Tạo ra các test case, chương trình test.**
+  - 15 test cases, logs.
+* **Các file được AI gen:**
+  - data/corpus
+  - generate_traces.py
+  - logs/
+  - llm_client.py
+  - eval/
+  - test/
 
 ### B. Lâm Quốc Trung (ReAct Agent & MCP Server)
 * **MCP Server & Client:**
@@ -76,18 +85,4 @@ Trong suốt quá trình thực hiện đồ án, nhóm đã sử dụng các c�
 ### Prompt 6: Gỡ lỗi ReAct Agent và xác minh thao tác ghi
 
 “Hãy rà soát vòng lặp ReAct tích hợp MCP. Agent cần giới hạn số bước, xử lý phản hồi sai định dạng và lỗi tool an toàn. Sau khi submit_audit_decision thành công, tự gọi get_claim_status để đọc lại trạng thái. Phân tích trace để phân biệt lời gọi tool, Observation và câu trả lời cuối.”
----
-
-## 4. PHẦN CODE DO AI HỖ TRỢ SINH RA VS. TỰ KIỂM SOÁT VÀ CHỈNH SỬA
-
-| Mô đun | Tỷ lệ AI hỗ trợ sinh khung | Mức độ sinh viên can thiệp & làm chủ |
-| :--- | :---: | :--- |
-| **Kho quy chế (data/corpus/)** | 60% | Sinh viên tự thiết kế các bẫy logic ($50 vs $40, thời hạn 30 ngày, mất hóa đơn). |
-| **Mô hình Dataclass** | 40% | Sinh viên tự định nghĩa các trường dữ liệu và phương thức `to_dict()`. |
-| **RAG Pipeline (src/rag/)** | 50% | Sinh viên tự gõ tay, fix lỗi regex, điều chỉnh kích thước chunk, gỡ lỗi model Google embedding `gemini-embedding-001`. |
-| **ReAct Loop & Parser** | 45% | Sinh viên tự cấu hình giới hạn `MAX_STEPS = 12`, xử lý chuỗi lỗi `"Error: ..."` an toàn. |
-| **MCP Server & Client** | 40% | Sinh viên tự cấu hình giao thức `stdio`, đường dẫn cơ sở dữ liệu JSON và kiểm tra `list_tools()`. |
-| **Framework Eval & Chart** | 50% | Sinh viên tự chạy thực nghiệm trên 15 câu testset, xử lý lỗi định dạng UTF-8 CSV và vẽ biểu đồ so sánh. |
-
----
 
