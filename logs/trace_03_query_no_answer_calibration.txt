@@ -1,0 +1,22 @@
+=======================================================
+REAL RUN TRACE LOG — AIPR FINAL PROJECT GROUP 10
+=======================================================
+Query: Công ty có hỗ trợ chi phí mua quà lưu niệm cho người thân khi nhân viên đi công tác nước ngoài không?
+Timestamp: openai/gpt-oss-20b
+
+--- [RAG RETRIEVAL STAGE] ---
+Total Chunks Retrieved: 3
+Rank 1: [DOC0004] Điều 3: Các Chi phí Tuyệt đối Không Được Thanh toán | Score=1.0000
+Rank 2: [DOC0003] Điều 3: Chi phí Tiếp khách Ngoại giao trong Chuyến công tác | Score=0.6478
+Rank 3: [DOC0003] Điều 2: Phụ cấp Lưu trú Vùng miền (Per Diem / Incidental Allowance) | Score=0.6045
+
+--- [LLM GENERATION STAGE] ---
+Model: openai/gpt-oss-20b
+Prompt Tokens: 911
+Total Tokens: 1159
+Latency: 0.817s
+
+--- [GENERATED ANSWER] ---
+Không, công ty không hỗ trợ chi phí mua quà lưu niệm cho người thân khi nhân viên đi công tác nước ngoài.  
+[DOC0004, Điều 3] ghi rõ “Công ty nghiêm cấm hoàn trả các khoản chi phí mang tính chất cá nhân sau: Mua quà lưu niệm, quà tặng cho gia đình, người thân hoặc bạn bè.”
+=======================================================

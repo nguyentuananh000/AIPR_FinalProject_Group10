@@ -36,18 +36,22 @@ async def run_with_mcp(
         for tool in discovered_tools:
             tool_names.add(tool.name)
             description = tool.description or "No description provided."
-            schema = json.dumps(tool.input_schema, ensure_ascii=False)
+            props = tool.input_schema.get("properties", {}) if isinstance(tool.input_schema, dict) else {}
+            params_example = ", ".join(f'"{k}": "..."' for k in props.keys())
 
             tool_descriptions.append(
-                f"- {tool.name}: {description}\n"
-                f"  Input schema: {schema}"
+                f"- {tool.name}({{{params_example}}}): {description}"
             )
 
         prompt_with_tools = (
             system_prompt
-            + "\n\nAvailable MCP tools:\n"
+            + "\n\nAvailable tools:\n"
             + "\n".join(tool_descriptions)
-            + '\n\nCall a tool using: Action: tool_name({"argument": "value"})'
+            + '\n\nIMPORTANT FORMAT RULE:\n'
+            + 'Never output system tool call objects. Output ONLY plain text using either:\n'
+            + 'Action: tool_name({"argument": "value"})\n'
+            + 'or:\n'
+            + 'Final Answer: <your final response>\n'
         )
 
         async def tool_call(

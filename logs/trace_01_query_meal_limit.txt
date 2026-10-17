@@ -1,0 +1,21 @@
+=======================================================
+REAL RUN TRACE LOG — AIPR FINAL PROJECT GROUP 10
+=======================================================
+Query: Hạn mức thanh toán chi phí ăn uống mỗi ngày cho nhân viên đi công tác là bao nhiêu?
+Timestamp: openai/gpt-oss-20b
+
+--- [RAG RETRIEVAL STAGE] ---
+Total Chunks Retrieved: 3
+Rank 1: [DOC0001] Điều 3: Tiêu chuẩn Bữa ăn và Phụ cấp Ăn uống | Score=1.0000
+Rank 2: [DOC0003] Điều 3: Chi phí Tiếp khách Ngoại giao trong Chuyến công tác | Score=0.6450
+Rank 3: [DOC0001] Điều 2: Tiêu chuẩn Khách sạn và Lưu trú | Score=0.5753
+
+--- [LLM GENERATION STAGE] ---
+Model: openai/gpt-oss-20b
+Prompt Tokens: 928
+Total Tokens: 1122
+Latency: 1.002s
+
+--- [GENERATED ANSWER] ---
+Hạn mức thanh toán chi phí ăn uống mỗi ngày cho nhân viên đi công tác là **$50 mỗi ngày** (tối đa). [DOC0001, Điều 3]
+=======================================================

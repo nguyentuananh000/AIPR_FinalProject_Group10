@@ -1,0 +1,21 @@
+=======================================================
+REAL RUN TRACE LOG — AIPR FINAL PROJECT GROUP 10
+=======================================================
+Query: Tiêu chuẩn phòng khách sạn cho nhân viên thông thường tại các thành phố lớn là bao nhiêu một đêm?
+Timestamp: openai/gpt-oss-20b
+
+--- [RAG RETRIEVAL STAGE] ---
+Total Chunks Retrieved: 3
+Rank 1: [DOC0001] Điều 2: Tiêu chuẩn Khách sạn và Lưu trú | Score=1.0000
+Rank 2: [DOC0001] Điều 3: Tiêu chuẩn Bữa ăn và Phụ cấp Ăn uống | Score=0.4609
+Rank 3: [DOC0003] Điều 2: Phụ cấp Lưu trú Vùng miền (Per Diem / Incidental Allowance) | Score=0.4479
+
+--- [LLM GENERATION STAGE] ---
+Model: openai/gpt-oss-20b
+Prompt Tokens: 966
+Total Tokens: 1140
+Latency: 0.770s
+
+--- [GENERATED ANSWER] ---
+Tiêu chuẩn phòng khách sạn cho nhân viên thông thường tại các thành phố lớn là **$120/đêm** (mức trần tối đa). [DOC0001, Điều 2]
+=======================================================
